@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  lunch-app-backend:
+    build: .
+    container_name: lunch-app-backend
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    restart: always
+    # Uncomment below to add a MongoDB service in the future
+    # depends_on:
+    #   - mongo
+
+# Example for adding MongoDB (uncomment if needed):
+#  mongo:
+#    image: mongo:6
+#    restart: always
+#    volumes:
+#      - mongo_data:/data/db
+#    environment:
+#      MONGO_INITDB_DATABASE: lunch_app
+#
+# volumes:
+#   mongo_data: 
